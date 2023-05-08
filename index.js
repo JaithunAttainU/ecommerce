@@ -81,8 +81,10 @@ app.post('/products', multerUpload.array('productImage', 4), async (request, res
 app.get("/products", (req, res) => {
   res.send(products)
 })
+const PORT = process.env.PORT || 8000;
 
-app.listen(8000, () => {
+console.log("Port Number", PORT)
+app.listen(PORT, () => {
   console.log("Server started Sucessfuly")
   console.log(process.env)
 })
